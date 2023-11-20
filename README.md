@@ -27,15 +27,15 @@ A host compiler is required if `grit` is not detected.
 
 ## Command line
 
-Configure `release` preset into `cmake-build-release` (see `CMakePresets.json`)
+Configure `gba-toolchain` preset into `cmake-build` (see `CMakePresets.json`)
 ```sh
-cmake -S . --preset=release
+cmake --preset gba-toolchain
 ```
-Build `brin_demo.elf` into `cmake-build-release`
+Build `brin_demo.elf` as `release` into `cmake-build`
 ```sh
-cmake --build cmake-build-release
+cmake --build --preset release
 ```
-Install `brin_demo.gba` into `bin/release`
+Install `brin_demo.gba` into `bin`
 ```sh
-cmake --install cmake-build-release
+cmake --install cmake-build
 ```

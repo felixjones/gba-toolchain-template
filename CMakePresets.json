@@ -8,29 +8,24 @@
   "configurePresets": [
     {
       "name": "gba-toolchain",
-      "hidden": true,
       "generator": "Unix Makefiles",
-      "toolchainFile": "gba-toolchain/cmake/gba.toolchain.cmake"
-    },
+      "toolchainFile": "gba-toolchain/cmake/gba.toolchain.cmake",
+      "binaryDir": "${sourceDir}/cmake-build",
+      "installDir": "${sourceDir}/bin"
+    }
+  ],
+  "buildPresets": [
     {
       "name": "debug",
-      "inherits": "gba-toolchain",
       "displayName": "Debug",
-      "binaryDir": "${sourceDir}/cmake-build-debug",
-      "installDir": "${sourceDir}/bin/debug",
-      "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug"
-      }
+      "configurePreset": "gba-toolchain",
+      "configuration": "Debug"
     },
     {
       "name": "release",
-      "inherits": "gba-toolchain",
       "displayName": "Release",
-      "binaryDir": "${sourceDir}/cmake-build-release",
-      "installDir": "${sourceDir}/bin/release",
-      "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Release"
-      }
+      "configurePreset": "gba-toolchain",
+      "configuration": "Release"
     }
   ]
 }
